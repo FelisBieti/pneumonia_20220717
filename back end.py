@@ -17,7 +17,7 @@ def init():
         image = Image.open(file)
         model = load_model("Pneumonia")
         img = np.asarray(image)
-        img.resize((150,150,3))
+        img.resize((500,500,3))
         img = np.asarray(img, dtype="float32") #need to transfer to np to reshape
         img = img.reshape(1, img.shape[0], img.shape[1], img.shape[2]) #rgb to reshape to 1,100,100,3
         pred=model.predict(img)
