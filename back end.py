@@ -12,7 +12,7 @@ def upload_file():
             print("File Received")
             model = load_model("Pneumonia")
             from tensorflow.keras.preprocessing.image import img_to_array, load_img
-            img = load_img('file', False, target_size=(500, 500))
+            img = load_img(file, False, target_size=(500, 500))
             x = img_to_array(img) / 255.0
             x = np.expand_dims(x, axis=0)
             pred = model.predict(x)
